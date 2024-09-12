@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <!-- Champ de saisie pour ajouter une nouvelle tâche -->
     <input v-model="newTask" placeholder="Ajouter une tâche" />
 
@@ -20,14 +20,18 @@
         </div>
 
         <div class="list" v-else>
-          <!-- Checkbox pour marquer la tache comme faite -->
-          <input type="checkbox" v-model="task.done" />
-          <!-- Affichage du nom de la tache -->
-          <span v-bind:class="{ completed: task.done }">{{ task.name }}</span>
+          <div class="task-container">
+            <!-- Checkbox pour marquer la tache comme terminée -->
+            <input type="checkbox" v-model="task.done" />
+            <!-- Texte de la tâche, barré si elle est terminée -->
+            <span v-bind:class="{ completed: task.done }">{{ task.name }}</span>
+          </div>
 
           <!-- Bouton pour modifier et supprimer la tache -->
-          <button @click="editTask(index)">Modifier</button>
-          <button @click="deleteTask(index)">Supprimer</button>
+          <div class="button-container">
+            <button @click="editTask(index)">Modifier</button>
+            <button @click="deleteTask(index)">Supprimer</button>
+          </div>
         </div>
       </li>
     </ul>

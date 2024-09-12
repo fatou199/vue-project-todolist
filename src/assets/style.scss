@@ -1,0 +1,83 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+$bg-color: #f3f4f6;
+$text-color: #2c3e50;
+$border-radius: 8px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $bg-color;
+}
+
+.box {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 20px;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: calc(100% - 100px);
+  padding: 20px;
+  border: 0;
+  outline: 0;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+}
+
+button {
+  width: 95px;
+  border: 0;
+  background-color: #7f56da;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px 0;
+  margin-left: 5px;
+}
+
+span {
+  color: $text-color;
+}
+
+li {
+  list-style: none;
+}
+
+.list {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between; /* Espace entre la tâche et les boutons */
+  align-items: center; /* Aligne verticalement les éléments */
+  padding: 10px;
+  background-color: #d4c3cf; /* Ou une autre couleur pour correspondre à ton design */
+  border-radius: 8px; /* Coins arrondis si tu le souhaites */
+  animation: animation 0.5s ease-out;
+  transition: 0.5s;
+}
+
+@keyframes animation {
+  from {
+    transform: translateY(100px);
+  }
+}
