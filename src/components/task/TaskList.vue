@@ -27,7 +27,9 @@
 export default {
   data() {
     return {
+      // Variable pour stocker le texte de la nouvelle tâche
       newTask: '',
+      // Tableau vide pour stocker les tâches
       tasks: []
     }
   },
@@ -43,6 +45,11 @@ export default {
       })
       // Reinitialise le champ de saisie
       this.newTask = ''
+    },
+
+    // Supprimer une tâche
+    deleteTask(index) {
+      this.tasks.splice(index, 1)
     }
   }
 }
