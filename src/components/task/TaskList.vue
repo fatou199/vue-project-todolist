@@ -47,17 +47,22 @@ export default {
 
   methods: {
     addTask() {
-      // Ajout d'une nouvelle tâche
-      this.tasks.push({
-        // Génèration d'un id unique pour la tâche en fonction de la longueur du tableau
-        id: this.tasks.length + 1,
-        // Stocke le texte de la nouvelle tâche
-        name: this.newTask,
-        // Par defaut isEdit n'est pas modifiable
-        isEdit: false
-      })
-      // Reinitialise le champ de saisie
-      this.newTask = ''
+      // verifie si le champ contient une valeur ou non
+      if (this.newTask) {
+        // Ajout d'une nouvelle tâche
+        this.tasks.push({
+          // Génèration d'un id unique pour la tâche en fonction de la longueur du tableau
+          id: this.tasks.length + 1,
+          // Stocke le texte de la nouvelle tâche
+          name: this.newTask,
+          // Par defaut la tache n'est pas terminée
+          done: false,
+          // Par defaut isEdit n'est pas modifiable
+          isEdit: false
+        })
+        // Reinitialise le champ de saisie
+        this.newTask = ''
+      }
     },
 
     // Modifier la tâche
