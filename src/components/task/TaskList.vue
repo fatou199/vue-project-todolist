@@ -14,7 +14,7 @@
         <!-- Checkbox pour marquer la tache comme faite -->
         <input type="checkbox" v-model="task.done" />
         <!-- Affichage du nom de la tache -->
-        <span>{{ task.name }}</span>
+        <span class="">{{ task.name }}</span>
         <!-- Bouton pour modifier et supprimer la tache -->
         <button @click="updateTask(index)">Modifier</button>
         <button @click="deleteTask(index)">Supprimer</button>
@@ -28,7 +28,21 @@ export default {
   data() {
     return {
       newTask: '',
-      tasks: [{ name: 'Ma première tâche' }]
+      tasks: []
+    }
+  },
+
+  methods: {
+    addTask() {
+      // Ajout d'une nouvelle tâche
+      this.tasks.push({
+        // Génèration d'un id unique pour la tâche en fonction de la longueur du tableau
+        id: this.tasks.length + 1,
+        // Stocke le texte de la nouvelle tâche
+        name: this.newTask
+      })
+      // Reinitialise le champ de saisie
+      this.newTask = ''
     }
   }
 }
