@@ -1,3 +1,16 @@
+# Description
+
+Création d'une application Vue 3 simple qui permet aux utilisateurs de gérer une liste de tâches (liste de tâches). Les utilisateurs doivent pouvoir ajouter, modifier, supprimer et marquer les tâches comme terminées.
+
+# Fonctionnalités
+
+- Affichage de la liste des tâches
+- Ajouter une nouvelle tâche.
+- Modifier le texte d'une tâche.
+- Marquer une tâche comme terminée (en barrant la tâche).
+- Supprimer une tâche.
+- Les tâches sont sauvegardées dans le Local Storage du navigateur.
+
 # vue-project-todolist
 
 This template should help get you started developing with Vue 3 in Vite.
