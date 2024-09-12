@@ -23,7 +23,7 @@
           <!-- Checkbox pour marquer la tache comme faite -->
           <input type="checkbox" v-model="task.done" />
           <!-- Affichage du nom de la tache -->
-          <span class="">{{ task.name }}</span>
+          <span v-bind:class="{ completed: task.done }">{{ task.name }}</span>
 
           <!-- Bouton pour modifier et supprimer la tache -->
           <button @click="editTask(index)">Modifier</button>
@@ -55,10 +55,10 @@ export default {
           id: this.tasks.length + 1,
           // Stocke le texte de la nouvelle tâche
           name: this.newTask,
-          // Par defaut la tache n'est pas terminée
-          done: false,
           // Par defaut isEdit n'est pas modifiable
-          isEdit: false
+          isEdit: false,
+          // Par defaut la tache n'est pas terminée
+          done: false
         })
         // Reinitialise le champ de saisie
         this.newTask = ''
@@ -86,3 +86,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.completed {
+  text-decoration: line-through;
+}
+</style>
